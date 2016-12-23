@@ -13,16 +13,12 @@ class Mover(object):
         
     def randomWalk(self):
         #create a random step
-        randStep = randrange(0, 4)
-        print(randStep)
-        if randStep == 0:
-            self.pos.x += 1
-        elif randStep == 1:
-            self.pos.x -= 1
-        elif randStep == 2:
-            self.pos.y += 1
-        else:
-            self.pos.y -= 1
+        step_x = randint(-1, 1)
+        step_y = randint(-1, 1)
+        self.pos.x += step_x
+        self.pos.y += step_y
+        
+
             
 mover = None        
 def setup():
@@ -34,6 +30,4 @@ def setup():
 def draw():
     mover.show()
     mover.randomWalk()
-    
-
     
